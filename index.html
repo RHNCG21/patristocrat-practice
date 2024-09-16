@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Remove Spaces and Punctuation</title>
+  <title>Clean and Space</title>
 </head>
 <body>
   <input type="text" id="userInput">
-  <button onclick="cleanText()">Clean Text</button>
+  <button onclick="cleanAndSpace()">Clean and Space</button>
   <p id="displayText"></p>
 
   <script>
-    function cleanText() {
+    function cleanAndSpace() {
       let inputText = document.getElementById("userInput").value;
       let cleanedText = inputText.replace(/[\s.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
-      document.getElementById("displayText").textContent = cleanedText;
+      let spacedText = "";
+
+      for (let i = 0; i < cleanedText.length; i++) {
+        spacedText += cleanedText[i];
+        if ((i + 1) % 5 === 0 && i < cleanedText.length - 1) {
+          spacedText += " ";
+        }
+      }
+
+      document.getElementById("displayText").textContent = spacedText;
     }
   </script>
 </body>
