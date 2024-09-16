@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Test Website</title>
-  <style>
-    body {
-      background-color: #f0f0f0;
-      font-family: sans-serif;
-    }
+  <head>
+    <title>Simple Text Display</title>
+  </head>
+  <body>
+    <input type="text" id="userInput">
+    <button onclick="displayText()">Display Text</button>
+    <p id="displayText"></p>
 
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>very cool epic test</h1>
-
-</body>
+    <script>
+      function displayText() {
+        let inputText = document.getElementById("userInput").value;
+        document.getElementById("displayText").textContent = inputText;
+      }
+    </script>
+  </body>
 </html>
