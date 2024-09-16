@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Simple Text Display</title>
-  </head>
-  <body>
-    <input type="text" id="userInput">
-    <button onclick="displayText()">Display Text</button>
-    <p id="displayText"></p>
+<head>
+  <title>Remove Spaces and Punctuation</title>
+</head>
+<body>
+  <input type="text" id="userInput">
+  <button onclick="cleanText()">Clean Text</button>
+  <p id="displayText"></p>
 
-    <script>
-      function displayText() {
-        let inputText = document.getElementById("userInput").value;
-        document.getElementById("displayText").textContent = inputText;
-      }
-    </script>
-  </body>
+  <script>
+    function cleanText() {
+      let inputText = document.getElementById("userInput").value;
+      let cleanedText = inputText.replace(/[\s.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+      document.getElementById("displayText").textContent = cleanedText;
+    }
+  </script>
+</body>
 </html>
